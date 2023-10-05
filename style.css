@@ -1,0 +1,87 @@
+
+  body {
+    background-color: #3164ff;
+    background-image: url('Desktop.jpg');
+    background-repeat: no-repeat;
+    background-size:70% ;
+    background-attachment: fixed;
+    
+  }
+  .container {
+    width: 90vw;
+    max-width: 350px;
+    padding: 2em 1.5em;
+    background-color: #ffffff;
+    margin: 1em auto;
+    border-radius: 0.5em;
+  }
+  h4 {
+    font-size: 1.5em;
+  }
+  .input-section {
+    margin: 0.5em 0;
+  }
+  label,
+  .error-message {
+    display: block;
+    font-size: 1em;
+  }
+
+  .error-message {
+    margin-top: 0.2em;
+  }
+  input, button, .input-section {
+    display: block;
+    outline: none;
+    width: 95%;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+  }
+  input {
+    padding: 1em 0.5em;
+    border: 1.5px solid #d0d0d0;
+  }
+  select {
+    display: block;
+    outline: none;
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.3em;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    border: 1.5px solid #d0d0d0;
+    background-color: #ffffff; /* Background color for the select element */
+}
+select option {
+    font-weight: 500;
+}
+select:focus {
+    border-color: #37a137; /* Change border color when focused */
+}
+  button {
+    font-size: 1em;
+    background-color: #3164ff;
+    border: none;
+    color: #ffffff;
+    padding: 0.8em 0;
+    margin-top: 2em;
+  }
+  .required-color {
+    color: #ff4747;
+  }
+  .error {
+    border-color: #ff4747;
+  }
+  .valid {
+    border-color: #37a137;
+  }
+  .hide {
+    display: none;
+  }
+  @media only screen and (max-width: 450px) {
+    .container {
+      font-size: 14px;
+    }
+  }

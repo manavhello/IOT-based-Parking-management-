@@ -1,87 +1,138 @@
+body {
+  background-image: url('Desktop.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; /* Use 'cover' to make the image cover the entire viewport */
+  background-attachment: fixed;
+  margin: 0; /* Remove default margin to avoid extra space */
+  padding: 0; /* Remove default padding to avoid extra space */
+  height: 100vh; /* Set the body height to the height of the viewport */
+  overflow: hidden; /* Hide any content that overflows */
+}
 
-  body {
-    background-color: #3164ff;
-    background-image: url('Desktop.jpg');
-    background-repeat: no-repeat;
-    background-size:70% ;
-    background-attachment: fixed;
-    
-  }
-  .container {
-    width: 90vw;
-    max-width: 350px;
-    padding: 2em 1.5em;
-    background-color: #ffffff;
-    margin: 1em auto;
-    border-radius: 0.5em;
-  }
-  h4 {
-    font-size: 1.5em;
-  }
-  .input-section {
-    margin: 0.5em 0;
-  }
-  label,
-  .error-message {
-    display: block;
-    font-size: 1em;
-  }
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* Align contents to the right */
+  align-items: center; /* Vertically center contents */
+  background-color: rgb(37, 35, 35);
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:xx-large;
+  padding: 10px;
+  cursor:default;
+}
+.app-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 20px;
+}
+/* .navbar strong
+{
+  margin-left: 30px;
+} */
+.container {  
+  width: 500vw;
+  max-width: 300px;
+  padding: 2em 1.5em;
+  max-height: 400px;
+  margin-top: 100%;
+  background-color: #ffffff;
+  margin: 0% 30%; /* Center the container vertically and horizontally */
+  border-radius: 0.5em;
+  position:absolute; /* Position the container absolutely */
+  top: 50%; /* Place the top of the container at the vertical center */
+  left: 50%; /* Place the left of the container at the horizontal center */
+  transform: translate(-50%, -50%); /* Center the container precisely */
+}
 
-  .error-message {
-    margin-top: 0.2em;
-  }
-  input, button, .input-section {
-    display: block;
-    outline: none;
-    width: 95%;
-    padding: 0.5em;
-    border-radius: 0.3em;
-    margin-bottom: 0.5em;
-    font-weight: 500;
-  }
-  input {
-    padding: 1em 0.5em;
-    border: 1.5px solid #d0d0d0;
-  }
-  select {
-    display: block;
-    outline: none;
-    width: 100%;
-    padding: 0.5em;
-    border-radius: 0.3em;
-    margin-bottom: 0.5em;
-    font-weight: 500;
-    border: 1.5px solid #d0d0d0;
-    background-color: #ffffff; /* Background color for the select element */
+
+
+h4 {
+  font-size: 1.5em;
+  margin: auto;
+  text-align: center;
+  padding: 1px;
+  cursor: default;
+}
+.input-section {
+  margin: 0.5em 0;
+}
+label, .error-message {
+  display: block;
+  font-size: 1em;
+}
+
+.error-message {
+  margin-top: 0.2em;
+}
+input, button, .input-section {
+  display: block;
+  outline: none;
+  width: 95%;
+  padding: 0.5em;
+  margin-top: 0.8%;
+  border-radius: 0.3em;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+input {
+  padding: 1em 0.5em;
+  border: 1.5px solid #d0d0d0;
+}
+select {
+  display: block;
+  outline: none;
+  width: 100%;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  border: 1.5px solid #d0d0d0;
+  background-color: #ffffff; /* Background color for the select element */
 }
 select option {
-    font-weight: 500;
+  font-weight: 500;
 }
 select:focus {
-    border-color: #37a137; /* Change border color when focused */
+  border-color: #37a137; /* Change border color when focused */
 }
-  button {
-    font-size: 1em;
-    background-color: #3164ff;
-    border: none;
-    color: #ffffff;
-    padding: 0.8em 0;
-    margin-top: 2em;
+button {
+  font-size: 1em;
+  background-color:goldenrod;
+  border: none;
+  color: #ffffff;
+  padding: 0.8em 0;
+  margin-top: 0.8em;
+  margin-left: 0.6em;
+  cursor: pointer;
+ }
+
+
+.required-color {
+  color: #ff4747;
+}
+.error {
+  border-color: #ff4747;
+}
+.valid {
+  border-color: #37a137;
+}
+.hide {
+  display: none;
+}
+
+.content {
+  flex: 1; /* Make the content flexible to take available space */
+  /* background-color: #f2f2f2; Background color for the content */
+  padding: 20px;
+  margin-top: 1%;
+  margin-left: 2%;
+  width: 50%;
+  font-size: 2em;
+  /* font-family:'Times New Roman', Times, serif; */
+  color: white;
+}
+@media only screen and (max-width: 450px) {
+  .container {
+    font-size: 14px;
   }
-  .required-color {
-    color: #ff4747;
-  }
-  .error {
-    border-color: #ff4747;
-  }
-  .valid {
-    border-color: #37a137;
-  }
-  .hide {
-    display: none;
-  }
-  @media only screen and (max-width: 450px) {
-    .container {
-      font-size: 14px;
-    }
-  }
+}

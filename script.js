@@ -1,167 +1,73 @@
-//First Name
-let firstNameInput = document.getElementById("first-name-input");
-let firstNameError = document.getElementById("first-name-error");
-let emptyFirstNameError = document.getElementById("empty-first-name");
+// Username validation
+const usernameInput = document.getElementById("username-input");
+const usernameError = document.getElementById("username-error");
+const emptyUsernameError = document.getElementById("empty-username");
+const usernameRegex = /^[a-zA-Z\s]+$/; // Allow only letters and spaces
 
-//Last name
-let lastNameInput = document.getElementById("last-name-input");
-let lastNameError = document.getElementById("last-name-error");
-let emptyLastNameError = document.getElementById("empty-last-name");
-
-//Phone
-let phoneInput = document.getElementById("phone");
-let phoneError = document.getElementById("phone-error");
-let emptyPhoneError = document.getElementById("empty-phone");
-
-//Email
-let emailInput = document.getElementById("email");
-let emailError = document.getElementById("email-error");
-let emptyEmailError = document.getElementById("empty-email");
-
-//Password
-let passwordInput = document.getElementById("password");
-let passwordError = document.getElementById("password-error");
-let emptyPasswordError = document.getElementById("empty-password");
-
-//Verify Password
-let verifyPasswordInput = document.getElementById("verify-password");
-let verifyPasswordError = document.getElementById("verify-password-error");
-let emptyVerifyPasswordError = document.getElementById("empty-verify-password");
-
-//Submit
-let submitButton = document.getElementById("submit-button");
-
-//Valid
-let validClasses = document.getElementsByClassName("valid");
-let invalidClasses = document.getElementsByClassName("error");
-
-//Password Verification
-const passwordVerify = (password) => {
-  const regex =
-    /^(?=.+[a-z])(?=.+[A-Z])(?=.+[0-9])(?=.+[\$\%\^\&\!@\#\*\(\)\+\=`~\?\>\<])/;
-  return regex.test(password) && password.length >= 8;
-};
-
-//Text verification (if input contains only text)
-const textVerify = (text) => {
-  const regex = /^[a-zA-Z]{3,}$/;
-  return regex.test(text);
-};
-
-//Phone number verification
-const phoneVerify = (number) => {
-  const regex = /^[0-9]{10}$/;
-  return regex.test(number);
-};
-
-//Email verification
-const emailVerify = (input) => {
-  const regex = /^[a-z0-9_]+@[a-z]{3,}\.[a-z\.]{3,}$/;
-  return regex.test(input);
-};
-
-//For empty input - accepts(input,empty error for that input and other errors)
-const emptyUpdate = (
-  inputReference,
-  emptyErrorReference,
-  otherErrorReference
-) => {
-  if (!inputReference.value) {
-    //input is null/empty
-    emptyErrorReference.classList.remove("hide");
-    otherErrorReference.classList.add("hide");
-    inputReference.classList.add("error");
+usernameInput.addEventListener("input", () => {
+  const username = usernameInput.value.trim();
+  if (usernameRegex.test(username)) {
+    usernameError.classList.add("hide");
+    emptyUsernameError.classList.add("hide");
   } else {
-    //input has some content
-    emptyErrorReference.classList.add("hide");
-  }
-};
-
-//For error styling and displaying error message
-const errorUpdate = (inputReference, errorReference) => {
-  errorReference.classList.remove("hide");
-  inputReference.classList.remove("valid");
-  inputReference.classList.add("error");
-};
-
-//For no errors
-const validInput = (inputReference) => {
-  inputReference.classList.remove("error");
-  inputReference.classList.add("valid");
-};
-
-//First name
-firstNameInput.addEventListener("input", () => {
-  if (textVerify(firstNameInput.value)) {
-    //If verification returns true
-    firstNameError.classList.add("hide");
-    validInput(firstNameInput);
-  } else {
-    //for false
-    errorUpdate(firstNameInput, firstNameError);
-    //empty checker
-    emptyUpdate(firstNameInput, emptyFirstNameError, firstNameError);
+    usernameError.classList.remove("hide");
   }
 });
 
-//Last name
-lastNameInput.addEventListener("input", () => {
-  if (textVerify(lastNameInput.value)) {
-    lastNameError.classList.add("hide");
-    validInput(lastNameInput);
+// Mobile number validation
+const mobileInput = document.getElementById("mobile");
+const mobileError = document.getElementById("mobile-error");
+const emptyMobileError = document.getElementById("empty-mobile");
+const mobileRegex = /^\d{10}$/; // 10-digit number
+
+mobileInput.addEventListener("input", () => {
+  const mobileNumber = mobileInput.value.trim();
+  if (mobileRegex.test(mobileNumber)) {
+    mobileError.classList.add("hide");
+    emptyMobileError.classList.add("hide");
   } else {
-    errorUpdate(lastNameInput, lastNameError);
-    emptyUpdate(lastNameInput, emptyLastNameError, lastNameError);
+    mobileError.classList.remove("hide");
   }
 });
 
-//Phone
-phoneInput.addEventListener("input", () => {
-  if (phoneVerify(phoneInput.value)) {
-    phoneError.classList.add("hide");
-    validInput(phoneInput);
+// Vehicle number validation
+const vehicleNumberInput = document.getElementById("vehicle-number");
+const vehicleNumberError = document.getElementById("vehicle-number-error");
+const emptyVehicleNumberError = document.getElementById("empty-vehicle-number");
+const vehicleNumberRegex = /^[A-Z]{2}[ -]?[0-9]{2}[ -]?[A-Z]{0,3}[ -]?[0-9]{1,4}$/; // validation pattern
+
+vehicleNumberInput.addEventListener("input", () => {
+  const vehicleNumber = vehicleNumberInput.value.trim().toUpperCase();
+  if (vehicleNumberRegex.test(vehicleNumber)) {
+    vehicleNumberError.classList.add("hide");
+    emptyVehicleNumberError.classList.add("hide");
   } else {
-    errorUpdate(phoneInput, phoneError);
-    emptyUpdate(phoneInput, emptyPhoneError, phoneError);
+    vehicleNumberError.classList.remove("hide");
   }
 });
 
-//Email
-emailInput.addEventListener("input", () => {
-  if (emailVerify(emailInput.value)) {
-    emailError.classList.add("hide");
-    validInput(emailInput);
+// Vehicle type validation
+const vehicleTypeSelect = document.querySelector('select[name="vehicle-type"]');
+
+vehicleTypeSelect.addEventListener("change", () => {
+  const selectedValue = vehicleTypeSelect.value;
+  if (selectedValue === "") {
+    vehicleTypeSelect.classList.add("error");
   } else {
-    errorUpdate(emailInput, emailError);
-    emptyUpdate(emailInput, emptyEmailError, emailError);
+    vehicleTypeSelect.classList.remove("error");
   }
 });
 
-//Password
-passwordInput.addEventListener("input", () => {
-  if (passwordVerify(passwordInput.value)) {
-    passwordError.classList.add("hide");
-    validInput(passwordInput);
-  } else {
-    errorUpdate(passwordInput, passwordError);
-    emptyUpdate(passwordInput, emptyPasswordError, passwordError);
-  }
-});
+// Submit button click event
+const submitButton = document.getElementById("submit-button");
 
-//Verify password
-verifyPasswordInput.addEventListener("input", () => {
-  if (verifyPasswordInput.value === passwordInput.value) {
-    verifyPasswordError.classList.add("hide");
-    validInput(verifyPasswordInput);
-  } else {
-    errorUpdate(verifyPasswordInput, verifyPasswordError);
-    emptyUpdate(passwordInput, emptyVerifyPasswordError, verifyPasswordError);
-  }
-});
-
-//Submit button
 submitButton.addEventListener("click", () => {
-  if (validClasses.length == 6 && invalidClasses.length == 0) {
+  const isUsernameValid = usernameRegex.test(usernameInput.value.trim());
+  const isMobileValid = mobileRegex.test(mobileInput.value.trim());
+  const isVehicleNumberValid = vehicleNumberRegex.test(vehicleNumberInput.value.trim().toUpperCase());
+  const isVehicleTypeValid = vehicleTypeSelect.value !== "";
+
+  if (isUsernameValid && isMobileValid && isVehicleNumberValid && isVehicleTypeValid) {
     alert("Success");
   } else {
     alert("Error");

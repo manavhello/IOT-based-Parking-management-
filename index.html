@@ -2,49 +2,57 @@
 <html>
 
 <head>
-    <title>Form Validation</title>
+    <title>ParkIT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
 </head>
 
 <body>
+    <nav class="navbar">
+        <div class="app-name"><strong> ParkIT</strong></div>
+    </nav>
+    <div class="content">
 
+    </div>
     <div class="container">
         <form autocomplete="off">
             <h4>Book Slot</h4>
             <div class="input-section">
-                <input type="text" placeholder="Username" id="username-input" required>
+                <input type="text" placeholder="Full Name" id="username-input" required>
                 <span id="username-error" class="hide required-color error-message">Invalid Input</span>
-                <span id="username-name" class="hide required-color error-message">First Name Cannot Be Empty</span>
+                <span id="empty-username" class="hide required-color error-message">Username cannot be empty</span>
             </div>
 
             <div class="input-section">
-                <input type="text" placeholder="Enter Phone Number" id="mobile" required>
-                <span id="mobile-error" class="hide required-color error-message">Mobile Number Should Have 10
-                    Digits</span>
-                <span id="empty-mobile" class="hide required-color error-message">It cannot be empty
-                </span>
+                <input type="tel" placeholder="Enter Phone Number" id="mobile" required>
+                <span id="mobile-error" class="hide required-color error-message">Mobile Number Should Have 10 Digits</span>
+                <span id="empty-mobile" class="hide required-color error-message">Mobile number cannot be empty</span>
             </div>
-
             <div class="input-section">
-                <input type="text" placeholder="vehicle Number " id="vehicle-number" required />
+                <input type="text" placeholder="Vehicle Number" id="vehicle-number" required />
                 <span id="vehicle-number-error" class="hide required-color error-message">Invalid</span>
                 <span id="empty-vehicle-number" class="hide required-color error-message">It Cannot Be Empty</span>
             </div>
+                
             <div class="input-section">
-            <select name="vehicle-type" required>
+                <select name="vehicle-type" required>
                     <option value="" disabled selected hidden>Vehicle Type</option>
-                    <option value="1">Two-Wheeler</option>
-                    <option value="2">Four-wheeler</option>
-
+                    <option value="two-wheeler">Two-Wheeler</option>
+                    <option value="four-wheeler">Four-Wheeler</option>
                 </select>
             </div>
 
-            <button id="submit-button">Signup</button>
+            <button type="button" id="submit-button">Book Now</button>
         </form>
+    </div>
+    <div class="content">
+        <h3>Welcome To ParkIT,</h3>
+        ParkIT is an innovative parking management system designed to make your parking experience hassle-free. With ParkIT, you can book parking slots in advance, ensuring that you have a guaranteed spot when you arrive.
     </div>
     <!-- Script -->
     <script src="script.js"></script>

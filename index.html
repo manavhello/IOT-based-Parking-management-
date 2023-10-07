@@ -4,55 +4,67 @@
 <head>
     <title>ParkIT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Stylesheet -->
+
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="app-name"><strong> ParkIT</strong></div>
+        <div class="navdiv">
+            <div class="logo"><a href="index.html">ParkIT</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
     <div class="content">
 
     </div>
     <div class="container">
-        <form autocomplete="off">
+        <form autocomplete="on" action="connect.php" method="post">
             <h4>Book Slot</h4>
             <div class="input-section">
-                <input type="text" placeholder="Full Name" id="username-input" required>
+                <input type="text" placeholder="Full Name" id="username-input" name='name' required>
                 <span id="username-error" class="hide required-color error-message">Invalid Input</span>
                 <span id="empty-username" class="hide required-color error-message">Username cannot be empty</span>
             </div>
 
             <div class="input-section">
-                <input type="tel" placeholder="Enter Phone Number" id="mobile" required>
-                <span id="mobile-error" class="hide required-color error-message">Mobile Number Should Have 10 Digits</span>
+                <input type="tel" placeholder="Enter Phone Number" name='mobile' id="mobile" required>
+                <span id="mobile-error" class="hide required-color error-message">Mobile Number Should Have 10
+                    Digits</span>
                 <span id="empty-mobile" class="hide required-color error-message">Mobile number cannot be empty</span>
             </div>
             <div class="input-section">
-                <input type="text" placeholder="Vehicle Number" id="vehicle-number" required />
+                <input type="text" placeholder="Vehicle Number" name='num' id="vehicle-number" required />
                 <span id="vehicle-number-error" class="hide required-color error-message">Invalid</span>
                 <span id="empty-vehicle-number" class="hide required-color error-message">It Cannot Be Empty</span>
             </div>
-                
+
             <div class="input-section">
                 <select name="vehicle-type" required>
                     <option value="" disabled selected hidden>Vehicle Type</option>
-                    <option value="two-wheeler">Two-Wheeler</option>
-                    <option value="four-wheeler">Four-Wheeler</option>
+                    <option value="2">Two-Wheeler</option>
+                    <option value="4">Four-Wheeler</option>
                 </select>
             </div>
 
-            <button type="button" id="submit-button">Book Now</button>
+            <input type="submit" id="submit-button" class="submit" name="submit" value="Book Now">
+
         </form>
     </div>
     <div class="content">
-        <h3>Welcome To ParkIT,</h3>
-        ParkIT is an innovative parking management system designed to make your parking experience hassle-free. With ParkIT, you can book parking slots in advance, ensuring that you have a guaranteed spot when you arrive.
+        <h2>Welcome To ParkIT,</h2>
+        <h5>ParkIT is an innovative parking management system designed to make your parking experience hassle-free. With
+            ParkIT, you can book parking slots in advance, ensuring that you have a guaranteed spot when you arrive</h5>
+        .
     </div>
     <!-- Script -->
     <script src="script.js"></script>

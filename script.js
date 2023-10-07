@@ -1,4 +1,6 @@
 // Username validation
+
+
 const usernameInput = document.getElementById("username-input");
 const usernameError = document.getElementById("username-error");
 const emptyUsernameError = document.getElementById("empty-username");

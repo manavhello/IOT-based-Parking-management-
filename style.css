@@ -9,7 +9,7 @@ body {
     height: 100vh; /* Set the body height to the height of the viewport */
     overflow: hidden; /* Hide any content that overflows */
   }
-  
+
   .navbar{
     background-color: black; padding-right: 40px; padding-left: 30px; margin: 0px;
   }
@@ -35,7 +35,7 @@ body {
   {
     margin-left: 30px;
   } */
-  .container {  
+  .container {
     width: 100%;
     max-width: 400px;
     padding: 2em 1.5em;
@@ -49,9 +49,9 @@ body {
     left: 57%; /* Place the left of the container at the horizontal center */
     transform: translate(-50%, -50%); /* Center the container precisely */
   }
-  
-  
-  
+
+
+
   h4 {
     font-size: 1.5em;
     margin: auto;
@@ -107,7 +107,7 @@ body {
     padding: 1em 0.5em;
     border-radius: 0.3em;
     margin-bottom: 0.5em;
-    
+
   }
   select:focus {
     border-color: #37a137; /* Change border color when focused */
@@ -122,8 +122,8 @@ body {
     margin-left: 0.6em;
     cursor: pointer;
    }
-  
-  
+
+
   .required-color {
     color: #ff4747;
   }
@@ -136,9 +136,9 @@ body {
   .hide {
     display: none;
   }
-  
+
   .content {
-    flex: 1; 
+    flex: 1;
     padding: 29px;
     margin-top: 1%;
     margin-left: 2%;
@@ -154,4 +154,38 @@ body {
     .container {
       font-size: 14px;
     }
+  }
+  a{
+    text-decoration: none;
+  }
+
+  .about{
+    margin-left: 70px;
+    margin-bottom: 500px;
+  }
+
+  .contact{
+    margin-left: 70px;
+    margin-bottom: 500px;
+  }
+
+  .bout{
+    font-size: 18px;
+    font-weight: lighter;
+    position: relative;
+    margin-right: 30px;
+  }
+
+  .content1{
+    color: black;
+    font-size: 20px;
+    margin-left: 52em;
+  }
+
+  .au{
+    font-size: 50px;
+  }
+
+  .cu{
+    font-size: 50px;
   }

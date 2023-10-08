@@ -56,8 +56,8 @@
                 </select>
             </div>
 
-            <input type="submit" id="submit-button" class="submit" name="submit" value="Book Now">
-
+            <input type="submit" id="submit-button" class="submit" name="submit" value="Book Now" onclick="generateqr()">
+            <div id="qrcode"></div>
         </form>
     </div>
     <div class="content">
@@ -66,8 +66,29 @@
             ParkIT, you can book parking slots in advance, ensuring that you have a guaranteed spot when you arrive</h5>
         .
     </div>
+    
     <!-- Script -->
     <script src="script.js"></script>
+    <script>
+
+        function generateqr(){
+
+            var name = document.getElementById('username-input').value;
+            var phnmbr = document.getElementById('mobile').value;
+            var vhnmbr = document.getElementById('vehicle-number').value;
+            var vhntp = document.getElementsByClassName('input-section').value;
+            console.log(name, phnmbr, vhnmbr, vhntp);
+
+            var url = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=Name : " + name 
+             + " Phone Number : " + phnmbr + " Vehicle Number : " + vhnmbr + " Vehicle Type : " + vhntp;
+             var ifr = `<iframe src="${url}" height="200" width="200"></iframe>`;
+
+            document.getElementById('qrcode').innerHTML = ifr;
+
+        }
+        
+     </script>
+     
 </body>
 
 </html>

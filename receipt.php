@@ -48,6 +48,20 @@
 
     <h2>QR Code:</h2>
     <!-- You can display a QR code here if needed -->
+    <div id="qrcode"></div>
+
+    <?php
+    // JavaScript code to generate and display the QR code
+    echo '<script>';
+    echo 'var name = "' . $name . '";';
+    echo 'var phnmbr = "' . $phone . '";';
+    echo 'var vhnmbr = "' . $vehicleNumber . '";';
+    echo 'var vhntp = "' . $vehicleType . '";';
+    echo 'var url = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=Name : " + name + " Phone Number : " + phnmbr + " Vehicle Number : " + vhnmbr + " Vehicle Type : " + vhntp;';
+    echo 'var ifr = `<iframe src="${url}" height="200" width="200"></iframe>`;';
+    echo 'document.getElementById("qrcode").innerHTML = ifr;';
+    echo '</script>';
+    ?>
 
     <p>Thank you for using our service. Have a great day!</p>
 </body>

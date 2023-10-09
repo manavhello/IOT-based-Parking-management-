@@ -26,25 +26,35 @@ if (isset($_POST['submit'])) {
         // An existing booking with the same vehicle number was found
         echo "<script>alert('You have already booked a slot with this vehicle number.');</script>";
     } else {
-        // No existing booking found with the same vehicle number, proceed with the new booking
-        $sql0 = "INSERT INTO user (FullName, PhoneNumber, VehicleNumber, VehicleType) VALUES ('$username', '$mobile', '$vehicle', '$type')";
+        // Check if the number of booked slots is less than 10
+        $checkBookingQuery = "SELECT COUNT(*) as booked_count FROM user";
+        $result = $con->query($checkBookingQuery);
+        $row = $result->fetch_assoc();
+        $bookedCount = $row['booked_count'];
 
-        if ($con->query($sql0) === TRUE) {
-            // Data was inserted successfully
-
-            // Retrieve the auto-generated booking ID
-            $bookingId = $con->insert_id;
-
-            // Close the database connection
-            $con->close();
-
-            // Redirect to receipt.php with the booking ID as a query parameter
-            header("Location: receipt.php?ID=" . $bookingId);
-            exit;
+        if ($bookedCount >= 10) {
+            // Parking is full
+            echo "<script>alert('Parking is full. Please try again later.');</script>";
         } else {
-            // Booking was not successful
-            echo "Error: " . $sql0 . "<br>" . $con->error;
+            // No existing booking found with the same vehicle number, proceed with the new booking
+            $sql0 = "INSERT INTO user (FullName, PhoneNumber, VehicleNumber, VehicleType) VALUES ('$username', '$mobile', '$vehicle', '$type')";
+
+            if ($con->query($sql0) === TRUE) {
+                // Data was inserted successfully
+
+                // Retrieve the auto-generated booking ID
+                $bookingId = $con->insert_id;
+
+                // Close the database connection
+                $con->close();
+
+                // Redirect to receipt.php with the booking ID as a query parameter
+                header("Location: receipt.php?ID=" . $bookingId);
+                exit;
+            } else {
+                // Booking was not successful
+                echo "Error: " . $sql0 . "<br>" . $con->error;
+            }
         }
     }
 }
-?>

@@ -1,20 +1,19 @@
 // Function to update booked slots count on the page
 function updateBookedSlotsCount() {
   // Make an AJAX request to fetch the booked slots count from the server
-  fetch('connect.php')
-      .then(response => response.json())
-      .then(data => {
-          // Update the booked slots count on the page
-          document.getElementById('booked-slots').textContent = data.bookedSlots;
-      })
-      .catch(error => {
-          console.error('Error fetching booked slots count:', error);
-      });
+  fetch('connect.php?update=true', { method: 'GET' })
+    .then(response => response.json())
+    .then(data => {
+      // Update the booked slots count on the page
+      document.getElementById('booked-slots').textContent = data.bookedSlots;
+    })
+    .catch(error => {
+      console.error('Error fetching booked slots count:', error);
+    });
 }
 
 // Call the function to update booked slots count when the page loads
 window.addEventListener('load', updateBookedSlotsCount);
-
 
 // Username validation
 

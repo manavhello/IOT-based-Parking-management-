@@ -29,6 +29,10 @@
     </div>
     <div class="container">
         <form autocomplete="off" action="connect.php" method="post">
+            <div class="slot-counts">
+                <p>Booked Slots: <span id="booked-slots">Loading...</span></p>
+                <p>Total Slots: <span id="total-slots">10</span></p>
+            </div>
             <h4>Book Slot</h4>
             <div class="input-section">
                 <input type="text" placeholder="Full Name" id="username-input" name='name' required>
@@ -69,20 +73,7 @@
 
     <!-- Script -->
     <script src="script.js"></script>
-    <script>
-        function generateqr(){
-            var name = document.getElementById('username-input').value;
-            var phnmbr = document.getElementById('mobile').value;
-            var vhnmbr = document.getElementById('vehicle-number').value;
-            var vhntp = document.getElementsByClassName('input-section').value;
-            console.log(name, phnmbr, vhnmbr, vhntp);
-
-            var url = "https://chart.googleapis.com/chart?cht=qr&chs=200x200&chl=Name : " + name 
-            + " Phone Number : " + phnmbr + " Vehicle Number : " + vhnmbr + " Vehicle Type : " + vhntp;
-            var ifr = `<iframe src="${url}" height="200" width="200"></iframe>`;
-            document.getElementById('qrcode').innerHTML = ifr;
-        }
-    </script>
+   
 
 
 </body>

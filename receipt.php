@@ -3,6 +3,28 @@
 
 <head>
     <title>Booking Receipt</title>
+
+    <style>
+       body {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
+           margin: 0;
+           font-family: Arial, sans-serif;
+       }
+
+       .content {
+           text-align: center;
+           padding: 20px;
+           border: 1px solid #ccc;
+           border-radius: 10px;
+           background-color: #f9f9f9;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       }
+   </style>
+
 </head>
 
 <body>

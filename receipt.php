@@ -3,32 +3,22 @@
 
 <head>
     <title>Booking Receipt</title>
-
-    <style>
-       body {
-           display: flex;
-           flex-direction: column;
-           align-items: center;
-           justify-content: center;
-           height: 100vh;
-           margin: 0;
-           font-family: Arial, sans-serif;
-       }
-
-       .content {
-           text-align: center;
-           padding: 20px;
-           border: 1px solid #ccc;
-           border-radius: 10px;
-           background-color: #f9f9f9;
-           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-       }
-   </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="index.html">ParkIT</a></div>
+            <ul>
+                <li><a href="receipt.php">Receipt</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="body receipt">
     <h1>Booking Receipt</h1>
 
     <h2>Booking Details:</h2>
@@ -47,11 +37,13 @@
 
     // Retrieve the booking ID from the query parameter if it exists
     $bookingId = isset($_GET['ID']) ? intval($_GET['ID']) : null;
-
+    $slotNumber = isset($_GET['Slot']) ? intval($_GET['Slot']) : null;
     // // Debugging code
-    // echo "<p>Booking ID: $bookingId</p>"; // Check the value of bookingId
+    // echo "<p><strong>Booking ID:</strong> $bookingId</p>"; // Check the value of bookingId
     if (!isset($bookingId)) {
         echo "<p>Booking ID not specified.</p>";
+    } elseif (!isset($slotNumber)) {
+        echo "<p>Slot Number not specified.</p>";
     } else {
         // Fetch data from the database based on the booking ID
         $sql = "SELECT * FROM user WHERE ID = $bookingId";
@@ -79,14 +71,16 @@
     ?>
 
     <?php if ($bookingId !== null) : ?>
+        <div class="bdetails">
+        <p><strong>Slot Number:</strong> <span id="slot-number"><?php echo $slotNumber; ?></span></p>
         <p><strong>Name:</strong> <span id="name"><?php echo $name; ?></span></p>
         <p><strong>Phone Number:</strong> <span id="phone"><?php echo $phone; ?></span></p>
         <p><strong>Vehicle Number:</strong> <span id="vehicle-number"><?php echo $vehicleNumber; ?></span></p>
         <p><strong>Vehicle Type:</strong> <span id="vehicle-type"><?php echo $vehicleType; ?></span></p>
-
+        </div>
         <h2>Booking Confirmation:</h2>
-        <p>Your parking slot has been successfully booked.</p>
-
+        <p>Your parking slot (Slot No.: <?php echo $slotNumber; ?>) has been successfully booked.</p>
+        
         <h2>QR Code:</h2>
         <!-- You can display a QR code here if needed -->
         <div id="qrcode"></div>
@@ -106,6 +100,7 @@
 
         <p>Thank you for using our service. Have a great day!</p>
     <?php endif; ?>
+    </div>
 </body>
 
 </html>

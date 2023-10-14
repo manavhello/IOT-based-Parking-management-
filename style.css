@@ -56,11 +56,11 @@ li a {
   max-height: 400px;
   margin-top: 100%;
   background-color: #ffffff;
-  margin: 0% 28%; /* Center the container vertically and horizontally */
+  margin: 0%;
   border-radius: 0.5em;
   position: absolute; /* Position the container absolutely */
   top: 50%; /* Place the top of the container at the vertical center */
-  left: 57%; /* Place the left of the container at the horizontal center */
+  left: 84%; 
   transform: translate(-50%, -50%); /* Center the container precisely */
 }
 
@@ -150,13 +150,14 @@ select:focus {
 
 .content {
   flex: 1;
-  padding: 29px;
-  margin-top: 1%;
+  padding: 3%;
+  margin-top: 5%;
   margin-left: 2%;
   width: 50%;
   font-size: 2em;
   color: white;
 }
+
 
 a {
   text-decoration: none;
@@ -200,4 +201,47 @@ a {
 .cu {
   font-size: 50px;
 }
+.slot-counts{
+  width: 100%;
+  padding: 2em 1.5em;
+  margin: 0%; 
+  border-radius: 0.5em;
+  position: absolute; 
+  left: 68%; 
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+.body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("Desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  display: flex;
+  margin-top: 0%;
+  flex-direction: column;
+  text-align: center;
+  /* padding: 5%; */
+  justify-content: center;
+  height: 100%;
+  /* margin: 0%; */
+  gap: 1%;
+  font-family: Arial, sans-serif;
+}
 
+.receipt {
+  margin-left: 70%;
+  margin-right: 2%;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1, h2{
+  margin: 2%;
+  /* padding: 0%; */
+}
+.bdetails{
+  text-align: justify;
+  margin-left: 5%;
+}

@@ -6,6 +6,8 @@ function updateBookedSlotsCount() {
     .then(data => {
       // Update the booked slots count on the page
       document.getElementById('booked-slots').textContent = data.bookedSlots;
+      //Update the total slots count on the page
+      document.getElementById('total-slots').textContent= data.totalSlots;
     })
     .catch(error => {
       console.error('Error fetching booked slots count:', error);
@@ -136,7 +138,7 @@ submitButton.addEventListener("click", async (e) => {
     }
   } catch (error) {
     console.error(error);
-    alert("Booking Successful");
+    alert("Connecting to Server");
   }
 });
 

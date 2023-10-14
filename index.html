@@ -18,21 +18,20 @@
         <div class="navdiv">
             <div class="logo"><a href="index.html">ParkIT</a></div>
             <ul>
+                <li><a href="receipt.php">Receipt</a></li>  
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about us.html">About Us</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
             </ul>
         </div>
     </nav>
-    <div class="content">
 
+    <div class="slot-counts">
+        <p>Booked Slots: <span id="booked-slots">Loading...</span></p>
+        <p>Total Slots: <span id="total-slots">Loading...</span></p>
     </div>
     <div class="container">
         <form autocomplete="off" action="connect.php" method="post">
-            <div class="slot-counts">
-                <p>Booked Slots: <span id="booked-slots">Loading...</span></p>
-                <p>Total Slots: <span id="total-slots">10</span></p>
-            </div>
             <h4>Book Slot</h4>
             <div class="input-section">
                 <input type="text" placeholder="Full Name" id="username-input" name='name' required>

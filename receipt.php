@@ -11,10 +11,22 @@
         <div class="navdiv">
             <div class="logo"><a href="index.html">ParkIT</a></div>
             <ul>
-                <li><a href="receipt.php">Receipt</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about us.html">About Us</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>
+                <!-- <li><a href="receipt.php">Receipt</a></li> -->
+                
+                <?php
+                // Check if the last booking details are available in the session
+                session_start();
+                if (isset($_SESSION['last_booking_name']) && isset($_SESSION['last_booking_slot'])) {
+                    $lastBookingName = $_SESSION['last_booking_name'];
+                    $lastBookingSlot = $_SESSION['last_booking_slot'];
+
+                    // Display the last booking details in the navigation bar
+                    echo '<li>Last Booking: Slot ' . $lastBookingSlot . ' by ' . $lastBookingName . '</li>';
+                }
+                ?>
             </ul>
         </div>
     </nav>

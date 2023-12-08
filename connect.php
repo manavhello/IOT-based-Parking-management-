@@ -1,14 +1,14 @@
 <?php
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
-$n = 10;
+$n = 6;
 
 // Function to connect to the database
 function connectToDatabase()
 {
     $host = 'localhost';
     $user = 'root';
-    $pwd = '';
+    $pwd = 'Test123';
     $db = 'booking';
     $con = new mysqli($host, $user, $pwd, $db);
 
@@ -82,7 +82,7 @@ if (isset($_POST['submit'])) {
 
     if ($countBookedSlotsResult) {
         $row = $countBookedSlotsResult->fetch_assoc();
-        $bookedSlots = $row['bookedSlots'];
+        $bookedSlots = $n-$row['bookedSlots'];
 
         // Close the database connection
         $con->close();

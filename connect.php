@@ -8,7 +8,7 @@ function connectToDatabase()
 {
     $host = 'localhost';
     $user = 'root';
-    $pwd = 'Test123';
+    $pwd = '';
     $db = 'booking';
     $con = new mysqli($host, $user, $pwd, $db);
 

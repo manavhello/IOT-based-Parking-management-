@@ -101,9 +101,10 @@ submitButton.addEventListener("click", async (e) => {
   const mobileNumber = mobileInput.value.trim();
   const vehicleNumber = vehicleNumberInput.value.trim().toUpperCase();
   const vehicleType = vehicleTypeSelect.value;
+  const hours = parseInt(hoursInput.value.trim(), 10);
 
   // Simple validation checks
-  if (!username || !mobileNumber || !vehicleNumber || !vehicleType) {
+  if (!username || !mobileNumber || !vehicleNumber || !vehicleType || isNaN(hours) || hours < 1 || hours > 24) {
     alert("Error: Please fill in all required fields correctly.");
     e.preventDefault(); // Prevent form submission
     return;

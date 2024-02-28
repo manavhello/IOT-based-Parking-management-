@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ParkIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="index.html">ParkIT</a></div>
+                
+                <ul>
+                <li><a href="wallet.php">Wallet</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="contact us.html">Contact Us</a></li>
+
+                <!-- <li><a href="receipt.php">Receipt</a></li>   -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="slot-counts">
+        <p>Available slots: <span id="booked-slots">Loading...</span></p>
+        <p>Total Slots: <span id="total-slots">Loading...</span></p>
+    </div>
+    <div class="container">
+        <form autocomplete="off" action="connect.php" method="post">
+            <h4>Book Slot</h4>
+            <div class="input-section">
+                <input type="text" placeholder="Full Name" id="username-input" name='name' required>
+                <span id="username-error" class="hide required-color error-message">Invalid Input</span>
+                <span id="empty-username" class="hide required-color error-message">Username cannot be empty</span>
+            </div>
+
+            <div class="input-section">
+                <input type="tel" placeholder="Enter Phone Number" name='mobile' id="mobile" required>
+                <span id="mobile-error" class="hide required-color error-message">Mobile Number Should Have 10
+                    Digits</span>
+                <span id="empty-mobile" class="hide required-color error-message">Mobile number cannot be empty</span>
+            </div>
+            <div class="input-section">
+                <input type="text" placeholder="Vehicle Number" name='num' id="vehicle-number" required />
+                <span id="vehicle-number-error" class="hide required-color error-message">Invalid</span>
+                <span id="empty-vehicle-number" class="hide required-color error-message">It Cannot Be Empty</span>
+            </div>
+
+            <div class="input-section">
+                <input type="number" placeholder="No. of Hours" name='hour' id="hour" required />
+                <span id="hours-error" class="hide required-color error-message">Invalid</span>
+                <span id="empty-hours" class="hide required-color error-message">It Cannot Be Empty</span>
+            </div>
+
+            <div class="input-section">
+                <select name="vehicle-type" required title="Vehicle Type">
+                    <option value="" disabled selected hidden>Vehicle Type</option>
+                    <option value="2">Two-Wheeler</option>
+                    <option value="4">Four-Wheeler</option>
+                    <option value="6">Electric-Vehicle</option>
+                </select>
+            </div>
+            
+            <input type="submit" id="submit-button" class="submit" name="submit" value="Book Now" onclick="generateqr()">
+            
+        </form>
+    </div>
+    <div class="content">
+        <h2>Welcome To ParkIT,</h2>
+        <h5>ParkIT is an innovative parking management system designed to make your parking experience hassle-free. With
+            ParkIT, you can book parking slots in advance, ensuring that you have a guaranteed spot when you arrive</h5>
+        .
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+   
+
+
+</body>
+
+</html>

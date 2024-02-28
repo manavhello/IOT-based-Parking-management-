@@ -35,6 +35,7 @@ usernameInput.addEventListener("input", () => {
   }
 });
 
+
 // Mobile number validation
 const mobileInput = document.getElementById("mobile");
 const mobileError = document.getElementById("mobile-error");
@@ -78,6 +79,20 @@ vehicleTypeSelect.addEventListener("change", () => {
     vehicleTypeSelect.classList.remove("error");
   }
 });
+
+// Number of hours validation
+const hoursInput = document.getElementById("hour");
+const hoursError = document.getElementById("hours-error");
+
+hoursInput.addEventListener("input", () => {
+  const hours = parseInt(hoursInput.value.trim(), 10);
+  if (hours >= 1 && hours <= 24) {
+    hoursError.classList.add("hide");
+  } else {
+    hoursError.classList.remove("hide");
+  }
+});
+
 // Submit button click event
 const submitButton = document.getElementById("submit-button");
 

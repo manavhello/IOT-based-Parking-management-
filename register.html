@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ParkIT</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+    </div>
+    <div class="container">
+        <form autocomplete="off" action="register.php" method="post">
+            <h4>Register</h4>
+            <div class="input-section">
+                <input type="text" placeholder="Full Name" id="username-input" name='name' required>
+                <span id="username-error" class="hide required-color error-message">Invalid Input</span>
+                <span id="empty-username" class="hide required-color error-message">Username cannot be empty</span>
+            </div>
+
+            <div class="input-section">
+                <input type="tel" placeholder="Enter Phone Number" name='mobile' id="mobile" required>
+                <span id="mobile-error" class="hide required-color error-message">Mobile Number Should Have 10
+                    Digits</span>
+                <span id="empty-mobile" class="hide required-color error-message">Mobile number cannot be empty</span>
+            </div>
+            <div class="input-section">
+                <input type="email" placeholder="Email Address" name='email' id="email" required>
+                <span id="email-error" class="hide required-color error-message">Invalid email address</span>
+                <span id="empty-email" class="hide required-color error-message">Email cannot be empty</span>
+            </div>
+            <div class="input-section">
+                <input type="password" placeholder="Password" name='password' id="password" required />
+                <span id="password-error" class="hide required-color error-message">Password should be at least 6 characters long</span>
+                <span id="empty-password" class="hide required-color error-message">Password cannot be empty</span>
+            </div>
+            
+            <input type="submit" id="submit-button" class="submit" name="submit" value="Register" onclick="generateqr()">
+            
+        </form>
+    </div>
+    <div class="content">
+        <h2>Welcome To ParkIT,</h2>
+        <h5>ParkIT is an innovative parking management system designed to make your parking experience hassle-free. With
+            ParkIT, you can book parking slots in advance, ensuring that you have a guaranteed spot when you arrive</h5>
+        
+    </div>
+
+    <!-- Script -->
+    <script src="register.js"></script>
+   
+
+
+</body>
+
+</html>

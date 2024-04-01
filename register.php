@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = htmlspecialchars($_POST["name"]);
     $mobile = htmlspecialchars($_POST["mobile"]);
     $email = htmlspecialchars($_POST["email"]);
-    $password = htmlspecialchars($_POST["password"]);
+    $db_password = htmlspecialchars($_POST["password"]);
 
     // Validate email format
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate password length
-    if (strlen($password) < 6) {
+    if (strlen($db_password) < 6) {
         echo "Password should be at least 6 characters long";
         exit; // Stop further execution
     }
@@ -34,13 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Prepare and bind the SQL statement
     $stmt = $conn->prepare("INSERT INTO users (name, mobile, email, password) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssss", $name, $mobile, $email, $password);
+    $stmt->bind_param("ssss", $name, $mobile, $email, $db_password);
 
     // Execute the statement
     if ($stmt->execute()) {
         // Registration successful
         echo "Registration successful!";
-        header("Location: home.html"); // Redirect to home.html
+        header("Location: login.html"); // Redirect to home.html
         exit; // Stop further execution
     } else {
         // Registration failed

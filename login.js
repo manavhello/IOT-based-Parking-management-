@@ -1,27 +1,24 @@
-document.getElementById('login-form').addEventListener('submit', async function(event) {
+document.getElementById("login-form").addEventListener("submit", function(event) {
     event.preventDefault();
-    const formData = new FormData(this);
-    try {
-        const response = await fetch('login.php', {
-            method: 'POST',
-            body: formData
-        });
-        const data = await response.json();
-        if (data.success) {
-            setMessage('success', 'Login successful.');
-            // Redirect to home page or perform other actions after successful login
-            window.location.href = 'home.html';
-        } else {
-            setMessage('error', 'Login failed. Please check your credentials.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        setMessage('error', 'An unexpected error occurred. Please try again later.');
-    }
-});
 
-function setMessage(type, message) {
-    const messageDiv = document.getElementById('message');
-    messageDiv.textContent = message;
-    messageDiv.className = type;
-}
+    const formData = new FormData(this);
+    
+    fetch("login.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Login successful
+            alert(data.message);
+            window.location.href = "home.html";
+        } else {
+            // Login failed
+            alert(data.message);
+        }
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+});

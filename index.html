@@ -5,7 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ParkIT - Welcome</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('Desktop.jpg'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* White background with transparency */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Shadow effect */
+        }
+
+        h1 {
+            text-align: center;
+            color: #f5f10a; /* Blue title */
+            margin-bottom: 30px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            background-color: #f5f10a; /* Blue background for options */
+            color: #000000; /* White text color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            transition: transform 0.3s;
+            flex: 1 0 300px;
+            max-width: 300px;
+        }
+
+        .option:hover {
+            transform: translateY(-5px);
+        }
+
+        .option h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .option p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #000000; /* White button background */
+            color: #f5f10a; /* Blue button text color */
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #f5f10a; /* Blue hover background */
+            color: #000000; /* White hover text color */
+        }
+    </style>
 </head>
 
 <body>
@@ -20,7 +94,7 @@
             <div class="option">
                 <h2>Admin Login</h2>
                 <p>Login as an admin to manage parking slots.</p>
-                <a href="admin_login.php" class="btn">Login</a>
+                <a href="admin.html" class="btn">Login</a>
             </div>
             <div class="option">
                 <h2>User Login</h2>

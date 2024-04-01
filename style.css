@@ -9,7 +9,18 @@ body {
   height: 100vh; /* Set the body height to the height of the viewport */
   overflow: hidden; /* Hide any content that overflows */
 }
+.logout-btn {
+  background-color: #f8cb02; 
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 5px; /* Rounded corners for the button */
+  color: #ffffff; /* White Text color for the button */
+  text-decoration: none; /* Remove default underline */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
 
+.logout-btn:hover {
+  background-color: #ff0000; 
+}
 .navbar {
   background-color: black;
   padding-right: 40px;

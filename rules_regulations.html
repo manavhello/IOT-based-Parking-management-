@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parking System Rules & Regulations</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background-image: url("Desktop.jpg");
+        background-repeat: repeat;
+        background-size: contain;
+        background-attachment: fixed;
+        margin: 0; /* Remove default margin to avoid extra space */
+        padding: 0; /* Remove default padding to avoid extra space */
+        height: 100vh; /* Set the body height to the height of the viewport */
+        overflow: hidden;
+      }
+
+      .navbar {
+        background-color: black;
+        padding-right: 40px;
+        padding-left: 30px;
+        margin: 0px;
+      }
+
+      .navdiv ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .navdiv ul li {
+        margin-right: 20px;
+      }
+
+      .logo a {
+  font-size: 35px;
+  font-weight: 600;
+  color: white;
+  margin-left: 40px;
+}
+    
+      .logout-btn {
+        background-color: #f8cb02;
+        padding: 10px 20px; /* Padding for the button */
+        border-radius: 5px; /* Rounded corners for the button */
+        color: #ffffff; /* White Text color for the button */
+        text-decoration: none; /* Remove default underline */
+        transition: background-color 0.3s; /* Smooth transition for background color */
+      }
+
+      .logout-btn:hover {
+        background-color: #ff0000;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #000000;
+        margin-bottom: 15px;
+        text-align: center; /* Center the headings */
+      }
+
+      p,
+       ul {
+        color: #333;
+        line-height: 1.5;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .highlight {
+        background-color: #ffff99;
+        padding: 5px;
+      }
+
+      .important {
+        font-weight: bold;
+      }
+      .nav{
+        list-style: none;
+  display: inline-block;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navdiv">
+        <div class="logo"><a href="index.html">ParkIT</a></div>
+        <ul>
+          <li class="nav"><a href="home.html">Home</a></li>
+          <li class="nav"><a href="about us.html">About Us</a></li>
+          <li class="nav"><a href="contact us.html">Contact Us</a></li>
+          <li class="nav"><a href="rules_regulations.html">Rules and Regulations</a></li>
+          <li class="nav"><button type="submit" onclick="dashboard()">dashboard</button></li>
+          <li><button onclick="logout()" class="logout-btn"><b>Log Out</b></button></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Parking System Rules & Regulations</h1>
+      <p>
+        This page outlines the rules and regulations governing the use of our
+        system. By registering and using our services, you agree to be bound by
+        these terms.
+      </p>
+
+      <h2>User Registration and Accounts</h2>
+      <ul>
+        <li>
+          All users must be at least 18 years old and have a valid driver's
+          license.
+        </li>
+        <li>
+          <b
+            ><span class="important"
+              >You are responsible for maintaining the confidentiality of your
+              login credentials.</span
+            ></b
+          >
+        </li>
+        <li>
+          Sharing your account details with unauthorized individuals is strictly
+          prohibited.
+        </li>
+      </ul>
+
+      <h2>Parking Allocation and Reservation</h2>
+      <ul>
+        <li>
+          Parking spaces and time slots are allocated based on a first-come,
+          first-served basis unless a reservation is made.
+        </li>
+        <li>
+          A maximum of one active reservation per user is allowed at a time.
+        </li>
+        <li>
+          Users are responsible for arriving within the reserved time slot. Late
+          arrivals might forfeit their reservation.
+        </li>
+        <li>
+          Overstaying your allotted parking time will result in late fees and
+          <span class="highlight">an extra 50rs charge with each hour</span>.
+        </li>
+      </ul>
+
+      <h2>Payment</h2>
+      <ul>
+        <li>
+          All parking fees must be paid through the integrated UPI payment
+          system before exiting the parking lot.
+        </li>
+        <li>
+          Failure to pay the due amount will result in enforcement actions,
+          including potential vehicle immobilization.
+        </li>
+      </ul>
+
+      <h2>Image Detection and Processing</h2>
+      <ul>
+        <li>
+          The system utilizes image detection and processing for security
+          purposes and to verify parking space allocation.
+        </li>
+        <li>
+          Users understand their vehicle image may be captured for
+          identification and system operation.
+        </li>
+      </ul>
+
+      <h2>General Conduct</h2>
+      <ul>
+        <li>
+          Users are expected to park their vehicles within designated spaces and
+          adhere to all posted traffic regulations.
+        </li>
+        <li>
+          Blocking other vehicles or obstructing traffic flow is strictly
+          prohibited.
+        </li>
+        <li>
+          Damaging or tampering with system components is strictly prohibited.
+        </li>
+        <li>
+          The use of the system for any illegal or unlawful activity is strictly
+          prohibited.
+        </li>
+      </ul>
+
+      <h2>Additional Information</h2>
+      <ul>
+        <li>
+          The system operators reserve the right to modify these rules and
+          regulations at any time. Any changes will be communicated through the
+          platform and signage within the parking area.
+        </li>
+        <li>
+          For any inquiries or concerns, please contact us through the provided
+          channels listed on the <a href="#">Contact Us</a> page.
+        </li>
+        <li>
+          By using this system, you acknowledge that you have read and
+          understood these rules and regulations. We appreciate your cooperation
+          in ensuring a smooth and efficient parking experience for everyone.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

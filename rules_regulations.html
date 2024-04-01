@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <title>Parking System Rules & Regulations</title>
     <style>
       body {
@@ -19,9 +20,11 @@
 
       .navbar {
         background-color: black;
-        padding-right: 40px;
-        padding-left: 30px;
-        margin: 0px;
+        padding: 0 30px;
+        margin: 0;
+        display: flex;
+        justify-content: space-between; /* Align items to the left and right */
+        align-items: center; /* Center items vertically */
       }
 
       .navdiv ul {
@@ -29,6 +32,7 @@
         margin: 0;
         padding: 0;
         display: flex;
+        align-items: center; /* Center items vertically */
       }
 
       .navdiv ul li {
@@ -36,12 +40,12 @@
       }
 
       .logo a {
-  font-size: 35px;
-  font-weight: 600;
-  color: white;
-  margin-left: 40px;
-}
-    
+        font-size: 35px;
+        font-weight: 600;
+        color: white;
+        margin-left: 20px; /* Adjusted margin for logo */
+      }
+
       .logout-btn {
         background-color: #f8cb02;
         padding: 10px 20px; /* Padding for the button */
@@ -52,8 +56,9 @@
       }
 
       .logout-btn:hover {
-        background-color: #ff0000;
+        background-color: #f9d534;
       }
+
       .container {
         max-width: 800px;
         margin: 0 auto;
@@ -61,6 +66,8 @@
         background-color: #fff;
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        height: 80vh; /* Set fixed height for the container */
+        overflow-y: auto; /* Enable vertical scrolling */
       }
 
       h1,
@@ -72,7 +79,7 @@
       }
 
       p,
-       ul {
+      ul {
         color: #333;
         line-height: 1.5;
       }
@@ -94,13 +101,14 @@
       .important {
         font-weight: bold;
       }
-      .nav{
+
+      .nav {
         list-style: none;
-  display: inline-block;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  margin-right: 60px;
+        display: inline-block;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 60px;
       }
     </style>
   </head>
@@ -113,9 +121,11 @@
           <li class="nav"><a href="about us.html">About Us</a></li>
           <li class="nav"><a href="contact us.html">Contact Us</a></li>
           <li class="nav"><a href="rules_regulations.html">Rules and Regulations</a></li>
-          <li class="nav"><button type="submit" onclick="dashboard()">dashboard</button></li>
-          <li><button onclick="logout()" class="logout-btn"><b>Log Out</b></button></li>
         </ul>
+      </div>
+      <div>
+        <button type="submit" onclick="dashboard()" class="logout-btn"><b>dashboard</b></button>
+        <button onclick="logout()" class="logout-btn"><b>Log Out</b></button>
       </div>
     </nav>
     <div class="container">

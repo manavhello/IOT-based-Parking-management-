@@ -85,15 +85,14 @@ if (!isset($_SESSION['slotNumber'])) {
             <ul>
             <li><a href="home.html">Home</a></li>
                 <li><a href="about us.html">About Us</a></li>
-                <li><a href="contact us.html">Contact Us</a></li>
                 <li><a href="rules_regulations.html">Rules and Regulations</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>  
-                <li><button type="submit" onclick="dashboard.php"  >dashboard</button></li>
+                <li><button type="submit" onclick="dashboard()" class="logout-btn"><b>dashboard</b></button></li>
 
                 <?php
                 // Check if the last booking details are available in the session
                 if (isset($_SESSION['authenticated'])) {
-                    echo '<li><a href="home.html">Dashboard</a></li>';
+                    echo '<li><a href="home.html"></a></li>';
                 } else {
                     echo "<li><a href='login.html'>Login</a></li>";
                 }
@@ -147,7 +146,7 @@ if (!isset($_SESSION['slotNumber'])) {
         <!-- Pay Now Button -->
         <div class="pay-now-button">
             <form action="card.php">
-                <button type="submit" class="btn-pay-now">Pay Now</button>
+                <button type="submit" class="logout-btn">Pay Now</button>
             </form>
         </div>
     </div>

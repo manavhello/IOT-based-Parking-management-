@@ -17,15 +17,42 @@
         height: 100vh; /* Set the body height to the height of the viewport */
         overflow: hidden;
       }
-
       .navbar {
-        background-color: black;
-        padding: 0 30px;
-        margin: 0;
-        display: flex;
-        justify-content: space-between; /* Align items to the left and right */
-        align-items: center; /* Center items vertically */
-      }
+  background-color: black;
+  color: white; 
+}
+
+.navdiv ul li a {
+  color: white; 
+}
+
+.logout-btn {
+  background-color: #f8cb02; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  color: #ffffff; 
+  text-decoration: none; 
+  transition: background-color 0.3s; 
+}
+
+.logout-btn:hover {
+  background-color: #f9d534; 
+}
+.navbar {
+  background-color: black;
+  padding-right: 40px;
+  padding-left: 30px;
+  margin: 0px;
+}
+.navdiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+      
 
       .navdiv ul {
         list-style-type: none;
@@ -33,6 +60,7 @@
         padding: 0;
         display: flex;
         align-items: center; /* Center items vertically */
+        
       }
 
       .navdiv ul li {
@@ -89,10 +117,6 @@
         text-decoration: none;
       }
 
-      a:hover {
-        text-decoration: underline;
-      }
-
       .highlight {
         background-color: #ffff99;
         padding: 5px;
@@ -115,19 +139,17 @@
   <body>
     <nav class="navbar">
       <div class="navdiv">
-        <div class="logo"><a href="index.html">ParkIT</a></div>
-        <ul>
-          <li class="nav"><a href="home.html">Home</a></li>
-          <li class="nav"><a href="about us.html">About Us</a></li>
-          <li class="nav"><a href="contact us.html">Contact Us</a></li>
-          <li class="nav"><a href="rules_regulations.html">Rules and Regulations</a></li>
-        </ul>
+          <div class="logo"><a href="index.html">ParkIT</a></div>
+          <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="about us.html">About Us</a></li>
+              <li><a href="rules_regulations.html">Rules and Regulations</a></li>
+              <li><a href="contact us.html">Contact Us</a></li>
+              <li><button type="submit" onclick="dashboard()" class="logout-btn"><b>dashboard</b></button></li>
+             <li><button onclick="logout()" class="logout-btn"><b>Log Out</b></button></li> 
+          </ul>
       </div>
-      <div>
-        <button type="submit" onclick="dashboard()" class="logout-btn"><b>dashboard</b></button>
-        <button onclick="logout()" class="logout-btn"><b>Log Out</b></button>
-      </div>
-    </nav>
+  </nav>
     <div class="container">
       <h1>Parking System Rules & Regulations</h1>
       <p>

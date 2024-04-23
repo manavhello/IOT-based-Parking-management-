@@ -13,13 +13,10 @@
             <ul>
                 <li><a href="home.html">Home</a></li>
                 <li><a href="about us.html">About Us</a></li>
-                <li><a href="contact us.html">Contact Us</a></li>
                 <li><a href="rules_regulations.html">Rules and Regulations</a></li>
-                <li><a href="contact us.html">Contact Us</a></li>  
-                <li><button type="submit" onclick="dashboard()"  >dashboard</button></li>
-               <li><button onclick="logout()" class="logout-btn"><b>Log Out</b></button></li>  
-
-                <!-- <li><a href="receipt.php">Receipt</a></li> -->
+                <li><a href="contact us.html">Contact Us</a></li>
+                <li><button type="submit" onclick="dashboard()" class="logout-btn"><b>dashboard</b></button></li>
+               <li><button onclick="logout()" class="logout-btn"><b>Log Out</b></button></li> 
             </ul>
         </div>
     </nav>

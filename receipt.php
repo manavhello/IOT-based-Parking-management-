@@ -162,7 +162,18 @@
     $mail->addAddress($userEmail, $name); // Send email to the user who booked the slot
     $mail->isHTML(true);
     $mail->Subject = 'Parking Slot Booking Confirmation';
-    $mail->Body = 'Your parking slot (Slot No.: ' . $slotNumber . ') has been successfully booked.';
+    $mail->Body = '
+    <p>Dear ' . $username . ',</p>
+    <p>Your parking slot has been successfully booked with ParkIT.</p>
+    <h2>Booking Details:</h2>
+    <ul>
+        <li>Vehicle Number: ' . $vehicleNumber . '</li>
+        <li>Slot Number: ' . $slotNumber . '</li>
+        <li>Date: ' . date('Y-m-d') . '</li>
+        <li>Time: ' . date('H:i:s') . '</li>
+    </ul>
+    <p>Thank you for choosing ParkIT. Have a pleasant experience!</p>
+    <p>Best regards,<br>ParkIT Team</p>';
 
     sleep(4);
 

@@ -66,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <ul>
             <li><a href="home.html">Home</a></li>
                 <li><a href="about us.html">About Us</a></li>
-                <li><a href="contact us.html">Contact Us</a></li>
                 <li><a href="rules_regulations.html">Rules and Regulations</a></li>
                 <li><a href="contact us.html">Contact Us</a></li>  
                <li><button onclick="logout()" class="logout-btn"><b>Log Out</b></button></li> 
@@ -74,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php
                 // Check if the user is authenticated
                 if (isset($_SESSION['authenticated'])) {
-                    echo '<li><a href="home.html">home</a></li>';
+                    echo '<li><a href="home.html"></a></li>';
                 } else {
                     echo "<li><a href='login.html'>Login</a></li>";
                 }

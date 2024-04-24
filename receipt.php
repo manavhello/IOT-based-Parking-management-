@@ -175,7 +175,7 @@
     <p>Thank you for choosing ParkIT. Have a pleasant experience!</p>
     <p>Best regards,<br>ParkIT Team</p>';
 
-    sleep(4);
+    sleep(2);
 
     // Send email
     if ($mail->send()) {

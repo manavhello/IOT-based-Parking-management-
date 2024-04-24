@@ -29,19 +29,19 @@ if (!isset($_SESSION['authenticated'])) {
                         <img src="card.png" alt="Card Image">
                         <p>Total Bill: <?php echo isset($_SESSION['bill']) ? '₹' . number_format($_SESSION['bill'], 2) : 'N/A'; ?></p>
                         <label for="cardNumber" class="card-input__label">Card Number</label>
-                        <input type="text" id="cardNumber" class="card-input__input" name="cardNumber" autocomplete="off" required>
+                        <input type="text" id="cardNumber" class="card-input__input" name="cardNumber" autocomplete="off" >
                         <span class="error" id="cardNumberError"></span>
                     </div>
                     <div class="card-input">
                         <label for="cardName" class="card-input__label">Card Holder</label>
-                        <input type="text" id="cardName" class="card-input__input" name="cardName" autocomplete="off" required>
+                        <input type="text" id="cardName" class="card-input__input" name="cardName" autocomplete="off" >
                         <span class="error" id="cardNameError"></span>
                     </div>
                     <div class="card-form__row">
                         <div class="card-form__col">
                             <div class="card-form__group">
                                 <label for="cardMonth" class="card-input__label">Expiration Date</label>
-                                <select class="card-input__input -select" id="cardMonth" name="cardMonth" required>
+                                <select class="card-input__input -select" id="cardMonth" name="cardMonth" >
                                     <option value="" disabled selected>Month</option>
                                     <?php
                                     for ($n = 1; $n <= 12; $n++) {
@@ -49,7 +49,7 @@ if (!isset($_SESSION['authenticated'])) {
                                     }
                                     ?>
                                 </select>
-                                <select class="card-input__input -select" id="cardYear" name="cardYear" required>
+                                <select class="card-input__input -select" id="cardYear" name="cardYear" >
                                     <option value="" disabled selected>Year</option>
                                     <?php
                                     $currentYear = date('Y');
@@ -63,7 +63,7 @@ if (!isset($_SESSION['authenticated'])) {
                         <div class="card-form__col -cvv">
                             <div class="card-input">
                                 <label for="cardCvv" class="card-input__label">CVV</label>
-                                <input type="text" class="card-input__input" id="cardCvv" name="cardCvv" maxlength="4" autocomplete="off" required>
+                                <input type="text" class="card-input__input" id="cardCvv" name="cardCvv" maxlength="4" autocomplete="off" >
                                 <span class="error" id="cardCvvError"></span>
                             </div>
                         </div>
